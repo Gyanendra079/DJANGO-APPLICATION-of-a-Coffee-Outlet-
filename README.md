@@ -59,3 +59,58 @@ Follow these steps to run the project locally:
 ## 🔒 Security & Optimization
 * Optimized SQL queries using `select_related` and `prefetch_related` to eliminate N+1 query problems.
 * Implemented Django caching mechanisms for faster page load times on the menu and product listings.
+
+# My First Coffee Website
+
+BeanCraft is a Django-based 24/7 coffee ordering platform.
+
+## Features
+
+- Coffee shop homepage
+- Dynamic menu
+- Product categories
+- Shopping cart
+- Quantity management
+- Checkout
+- Order creation
+- Order confirmation
+- Order tracking
+- Django Admin
+- Order status management
+- Responsive UI
+
+## Technology Stack
+
+- Python
+- Django
+- SQLite
+- HTML5
+- CSS3
+- JavaScript
+- Git
+- GitHub
+
+## Project Architecture
+
+```text
+Customer
+   |
+   v
+Django Website
+   |
+   +--> Home
+   +--> Menu
+   +--> Cart
+   +--> Checkout
+   +--> Order Confirmation
+   +--> Track Order
+   |
+   v
+Django Backend
+   |
+   v
+Database
+   |
+   +--> MenuItem
+   +--> Order
+   +--> OrderItem
