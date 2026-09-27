@@ -1,7 +1,7 @@
 # Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
 
 # Virtual environment
 .venv/
@@ -9,13 +9,11 @@ venv/
 env/
 
 # Django
-*.log
 db.sqlite3
-db.sqlite3-journal
+*.log
 
-# Environment variables / secrets
+# Environment variables
 .env
-.env.*
 
 # IDE
 .vscode/
@@ -25,10 +23,6 @@ db.sqlite3-journal
 .DS_Store
 Thumbs.db
 
-# Python testing/cache
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Django static collection
+# Static/media generated files
 staticfiles/
+media/
