@@ -1,0 +1,20 @@
+>> cd MyFirstCof
+>> git init
+>> C:/building gen ai applications/MyFirstCof/.git/
+>> git remote add origin https://github.com/Gyanendra079/DJANGO-APPLICATION-of-a-Coffee-Outlet-.git
+>> git remote -v
+>> git remote set-url origin https://github.com/Gyanendra079/YOUR-REPOSITORY-NAME.git
+>> notepad .gitignore
+>> git add .
+>> git status
+>> git commit -m "Add Django coffee outlet application"
+>> git pull origin main --allow-unrelated-histories
+>> >> git commit -m "Merge existing repository with Django project"
+>> git push -u origin main
+>> .\.venv\Scripts\Activate.ps1
+>> python manage.py check
+>> python manage.py migrate
+>> python manage.py createsuperuser
+>> python manage.py runserver
+
+Starting WSGI development server at http://127.0.0.1:8000/--> Open link to see the Website
