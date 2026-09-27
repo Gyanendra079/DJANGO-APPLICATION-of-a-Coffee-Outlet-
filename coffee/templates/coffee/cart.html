@@ -1,0 +1,163 @@
+{% extends 'coffee/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+    <p class="small-title">
+        YOUR CART
+    </p>
+
+    <h1>My Cart</h1>
+
+
+    {% if cart_items %}
+
+        <div class="cart-container">
+
+            {% for item in cart_items %}
+
+                <div class="cart-item">
+
+                    <div class="cart-product">
+
+                        <div class="cart-product-image">
+                            ☕
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                {{ item.product.name }}
+                            </h2>
+
+                            <p>
+                                ₹{{ item.product.price }}
+                                per item
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="quantity-controls">
+
+                        <a
+                            href="{% url 'decrease_quantity' item.product.id %}"
+                            class="quantity-button"
+                        >
+                            −
+                        </a>
+
+                        <span>
+                            {{ item.quantity }}
+                        </span>
+
+                        <a
+                            href="{% url 'increase_quantity' item.product.id %}"
+                            class="quantity-button"
+                        >
+                            +
+                        </a>
+
+                    </div>
+
+
+                    <div class="cart-subtotal">
+
+                        <strong>
+                            ₹{{ item.subtotal }}
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <a
+                            href="{% url 'remove_from_cart' item.product.id %}"
+                            class="remove-button"
+                        >
+                            Remove
+                        </a>
+
+                    </div>
+
+                </div>
+
+            {% endfor %}
+
+
+            <div class="cart-summary">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+                <div class="summary-row">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong>
+                        ₹{{ total }}
+                    </strong>
+
+                </div>
+
+                <div class="cart-actions">
+
+                    <a
+                        href="{% url 'menu' %}"
+                        class="button secondary-dark"
+                    >
+                        Continue Shopping
+                    </a>
+
+                    <a
+                        href="{% url 'order' %}"
+                        class="button"
+                    >
+                        Checkout
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    {% else %}
+
+        <div class="empty-cart">
+
+            <div class="empty-cart-icon">
+                🛒
+            </div>
+
+            <h2>
+                Your cart is empty
+            </h2>
+
+            <p>
+                Add some delicious coffee to get started.
+            </p>
+
+            <br>
+
+            <a
+                href="{% url 'menu' %}"
+                class="button"
+            >
+                Explore Menu
+            </a>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

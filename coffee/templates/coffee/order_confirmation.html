@@ -1,0 +1,92 @@
+{% extends 'coffee/base.html' %}
+
+{% block content %}
+
+<section class="section confirmation-section">
+
+    <div class="confirmation-box">
+
+        <p class="small-title">
+            ORDER CONFIRMED
+        </p>
+
+        <h1>
+            Thank You, {{ order.customer_name }}!
+        </h1>
+
+        <p>
+            Your order has been successfully placed.
+        </p>
+
+
+        <div class="order-number">
+
+            <strong>
+                Order #{{ order.id }}
+            </strong>
+
+        </div>
+
+
+        <div class="confirmation-details">
+
+            <h2>Order Details</h2>
+
+            {% for item in order.items.all %}
+
+                <div class="checkout-item">
+
+                    <span>
+                        {{ item.menu_item.name }}
+                        × {{ item.quantity }}
+                    </span>
+
+                    <strong>
+                        ₹{{ item.price }}
+                    </strong>
+
+                </div>
+
+            {% endfor %}
+
+
+            <div class="checkout-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    ₹{{ order.total_amount }}
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="status-box">
+
+            <p>
+                Order Status
+            </p>
+
+            <strong>
+                🟡 {{ order.status }}
+            </strong>
+
+        </div>
+
+
+        <a
+            href="{% url 'menu' %}"
+            class="button"
+        >
+            Continue Shopping
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

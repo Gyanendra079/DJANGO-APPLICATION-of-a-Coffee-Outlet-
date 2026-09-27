@@ -1,0 +1,313 @@
+{% extends "coffee/base.html" %}
+
+{% block title %}
+MyFirstCof | Coffee Anytime, 24/7
+{% endblock %}
+
+{% block content %}
+
+<!-- =========================================
+     HERO SECTION
+     ========================================= -->
+
+<section class="home-hero">
+
+    <div class="container hero-grid">
+
+        <div class="hero-content">
+
+            <div class="hero-status">
+                <span>●</span>
+                OPEN 24/7 · FRESHLY BREWED
+            </div>
+
+            <h1>
+                Your coffee.
+                <span>Your moment.</span>
+            </h1>
+
+            <p>
+                Fresh coffee, delicious food and great moments —
+                available whenever you need them.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="{% url 'menu' %}"
+                    class="button hero-button"
+                >
+                    Explore Menu →
+                </a>
+
+                <a
+                    href="{% url 'track_order' %}"
+                    class="hero-secondary"
+                >
+                    Track an Order
+                </a>
+
+            </div>
+
+            <div class="hero-trust">
+
+                <div>
+                    <strong>24/7</strong>
+                    <span>Always Open</span>
+                </div>
+
+                <div>
+                    <strong>15 min</strong>
+                    <span>Fast Preparation</span>
+                </div>
+
+                <div>
+                    <strong>Fresh</strong>
+                    <span>Every Order</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Coffee visual -->
+
+        <div class="hero-visual">
+
+            <div class="hero-circle"></div>
+
+            <div class="coffee-cup">
+                ☕
+            </div>
+
+            <div class="coffee-card">
+
+                <div>
+
+                    <small>
+                        TODAY'S FAVOURITE
+                    </small>
+
+                    <strong>
+                        Classic Cappuccino
+                    </strong>
+
+                    <span>
+                        Rich · Smooth · Balanced
+                    </span>
+
+                </div>
+
+                <strong class="coffee-price">
+                    ₹149
+                </strong>
+
+            </div>
+
+            <div class="open-badge">
+                <span>●</span>
+                OPEN NOW
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     STATS
+     ========================================= -->
+
+<section class="home-stats">
+
+    <div class="container stats-grid">
+
+        <div class="home-stat">
+
+            <strong>
+                24/7
+            </strong>
+
+            <span>
+                Always Open
+            </span>
+
+        </div>
+
+        <div class="home-stat">
+
+            <strong>
+                15 min
+            </strong>
+
+            <span>
+                Average Preparation
+            </span>
+
+        </div>
+
+        <div class="home-stat">
+
+            <strong>
+                Fresh
+            </strong>
+
+            <span>
+                Made To Order
+            </span>
+
+        </div>
+
+        <div class="home-stat">
+
+            <strong>
+                Easy
+            </strong>
+
+            <span>
+                Online Ordering
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WHY MYFIRSTCOF
+     ========================================= -->
+
+<section class="section why-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <p class="small-title">
+                WHY MYFIRSTCOF
+            </p>
+
+            <h2>
+                Coffee that fits your schedule.
+            </h2>
+
+            <p>
+                Whether it's an early morning, a busy afternoon
+                or a late-night craving, we're here when you are.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ☕
+                </div>
+
+                <h3>
+                    Fresh Coffee
+                </h3>
+
+                <p>
+                    Every cup is prepared fresh so you get
+                    a consistent and satisfying coffee experience.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Fast Service
+                </h3>
+
+                <p>
+                    Simple ordering and efficient preparation
+                    help you spend less time waiting.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🌙
+                </div>
+
+                <h3>
+                    Open 24/7
+                </h3>
+
+                <p>
+                    Morning coffee, afternoon fuel or a
+                    midnight cup — we're always available.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ORDER CTA
+     ========================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="home-cta">
+
+            <div>
+
+                <p class="small-title">
+                    READY WHEN YOU ARE
+                </p>
+
+                <h2>
+                    Your next cup is only a few clicks away.
+                </h2>
+
+                <p>
+                    Browse our menu, add your favourites to
+                    the cart and place your order in minutes.
+                </p>
+
+            </div>
+
+            <div>
+
+                <a
+                    href="{% url 'menu' %}"
+                    class="button"
+                >
+                    Order Now →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

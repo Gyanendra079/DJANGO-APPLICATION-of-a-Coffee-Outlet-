@@ -1,0 +1,206 @@
+{% extends "coffee/base.html" %}
+
+{% block title %}
+MyFirstCof | Menu
+{% endblock %}
+
+{% block content %}
+
+<section class="menu-hero">
+
+    <div class="container">
+
+        <p class="small-title">
+            OUR MENU
+        </p>
+
+        <h1>
+            Something good is<br>
+            always brewing.
+        </h1>
+
+        <p class="menu-intro">
+            Explore freshly prepared coffee, refreshing drinks,
+            snacks and desserts — available 24/7.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section menu-section">
+
+    <div class="container">
+
+        <div class="menu-toolbar">
+
+            <div>
+
+                <span class="menu-count">
+                    Our Selection
+                </span>
+
+                <span class="menu-note">
+                    Freshly prepared for you
+                </span>
+
+            </div>
+
+            <div class="open-label">
+                <span>●</span>
+                Open 24/7
+            </div>
+
+        </div>
+
+
+        <div class="product-grid">
+
+            {% for item in menu_items %}
+
+            <article class="product-card">
+
+                <div class="product-image">
+
+                    {% if item.image %}
+
+                        <img
+                            src="{{ item.image }}"
+                            alt="{{ item.name }}"
+                        >
+
+                    {% else %}
+
+                        {% if item.category == "Coffee" %}
+                            <span>☕</span>
+
+                        {% elif item.category == "Tea" %}
+                            <span>🍵</span>
+
+                        {% elif item.category == "Cold Drinks" %}
+                            <span>🧊</span>
+
+                        {% elif item.category == "Snacks" %}
+                            <span>🥪</span>
+
+                        {% elif item.category == "Desserts" %}
+                            <span>🍰</span>
+
+                        {% else %}
+                            <span>☕</span>
+                        {% endif %}
+
+                    {% endif %}
+
+                    <span class="category-badge">
+                        {{ item.category }}
+                    </span>
+
+                </div>
+
+
+                <div class="product-content">
+
+                    <h2>
+                        {{ item.name }}
+                    </h2>
+
+                    <p>
+                        {{ item.description }}
+                    </p>
+
+
+                    <div class="product-bottom">
+
+                        <div class="product-price">
+
+                            <small>
+                                PRICE
+                            </small>
+
+                            <strong>
+                                ₹{{ item.price }}
+                            </strong>
+
+                        </div>
+
+
+                        <a
+                            href="{% url 'add_to_cart' item.id %}"
+                            class="add-cart"
+                        >
+                            Add to Cart
+                            <span>+</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% empty %}
+
+            <div class="empty-menu">
+
+                <div>
+                    ☕
+                </div>
+
+                <h2>
+                    Our menu is getting ready.
+                </h2>
+
+                <p>
+                    Please check back shortly.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section menu-bottom-section">
+
+    <div class="container">
+
+        <div class="menu-cta">
+
+            <div>
+
+                <p class="small-title">
+                    OPEN AROUND THE CLOCK
+                </p>
+
+                <h2>
+                    Coffee doesn't have office hours.
+                </h2>
+
+                <p>
+                    Whether it's 7 AM or 2 AM,
+                    MyFirstCof is ready for your next order.
+                </p>
+
+            </div>
+
+            <a
+                href="{% url 'cart' %}"
+                class="button"
+            >
+                View Cart →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,241 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+        MyFirstCof
+        {% endblock %}
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'coffee/css/style.css' %}"
+    >
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         TOP BAR
+         ========================================= -->
+
+    <div class="top-bar">
+
+        <div class="container top-bar-content">
+
+            <span>
+                ☕ Fresh coffee, anytime
+            </span>
+
+            <span>
+                <span class="open-dot">●</span>
+                Open 24/7
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MAIN NAVIGATION
+         ========================================= -->
+
+    <header class="site-header">
+
+        <div class="container nav-container">
+
+            <!-- Logo -->
+
+            <a
+                href="{% url 'home' %}"
+                class="brand"
+            >
+
+                <span class="brand-icon">
+                    M
+                </span>
+
+                <span class="brand-text">
+                    MyFirstCof
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+
+            <nav class="main-nav">
+
+                <a
+                    href="{% url 'home' %}"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="{% url 'menu' %}"
+                >
+                    Menu
+                </a>
+
+                <a
+                    href="{% url 'track_order' %}"
+                >
+                    Track Order
+                </a>
+
+                <a
+                    href="{% url 'contact' %}"
+                >
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <!-- Cart -->
+
+            <a
+                href="{% url 'cart' %}"
+                class="cart-button"
+            >
+
+                🛒
+
+                <span>
+                    Cart
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a
+                    href="{% url 'home' %}"
+                    class="footer-brand"
+                >
+                    MyFirstCof
+                </a>
+
+                <p>
+                    Fresh coffee, great food and
+                    good moments — available 24/7.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Quick Links
+                </h3>
+
+                <a href="{% url 'home' %}">
+                    Home
+                </a>
+
+                <a href="{% url 'menu' %}">
+                    Menu
+                </a>
+
+                <a href="{% url 'track_order' %}">
+                    Track Order
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Customer
+                </h3>
+
+                <a href="{% url 'cart' %}">
+                    Shopping Cart
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    Contact Us
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    We're Open
+                </h3>
+
+                <p class="footer-open">
+                    ● Open 24/7
+                </p>
+
+                <p>
+                    Freshly prepared
+                    throughout the day.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <span>
+                © 2026 MyFirstCof
+            </span>
+
+            <span>
+                Coffee · Comfort · Community
+            </span>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

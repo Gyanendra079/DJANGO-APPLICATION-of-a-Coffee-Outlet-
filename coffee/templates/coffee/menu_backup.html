@@ -1,0 +1,83 @@
+{% extends 'coffee/base.html' %}
+
+{% block content %}
+
+<section class="section">
+
+    <p class="small-title">
+        OUR MENU
+    </p>
+
+    <h1>Choose Your Favorite</h1>
+
+
+    <div class="menu-grid">
+
+        {% for item in menu_items %}
+
+            <div class="product-card">
+
+                <div class="product-image">
+
+                    {% if item.image %}
+
+                        <img
+                            src="{{ item.image }}"
+                            alt="{{ item.name }}"
+                        >
+
+                    {% else %}
+
+                        ☕
+
+                    {% endif %}
+
+                </div>
+
+
+                <p class="category">
+                    {{ item.category }}
+                </p>
+
+
+                <h2>
+                    {{ item.name }}
+                </h2>
+
+
+                <p>
+                    {{ item.description }}
+                </p>
+
+
+                <div class="product-bottom">
+
+                    <strong>
+                        ₹{{ item.price }}
+                    </strong>
+
+
+                    <a
+                        href="{% url 'add_to_cart' item.id %}"
+                        class="button"
+                    >
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        {% empty %}
+
+            <p>
+                No menu items are currently available.
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
